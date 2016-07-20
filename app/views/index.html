@@ -1,8 +1,37 @@
 <html>
   <head>
+    <link class="cssdeck" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" class="cssdeck">
     <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+    <title>All Products</title>
   </head>
   <body>
-    The best place to start is the "WelcomeController.py" file in app/controllers.
+    <h3>All Products: </h3>
+    	{% with messages = get_flashed_messages(with_categories=true) %}
+	      {% if messages %}
+	        {% for category,message in messages %}
+	          <p class="{{ category }}">{{message}}</p>
+	        {% endfor %}
+	      {% endif %}
+	    {% endwith %}
+    <table>
+    	<tr>
+    		<th>Name</th>
+    		<th>Description</th>
+    		<th>Price</th>
+    		<th>Actions</th>
+    	</tr>
+    	<tr>
+    	{% for product in products: %}
+    		<td>{{product.name}}</td>
+    		<td>{{product.description}}</td>
+    		<td>${{product.price}}</td>
+    		<td><a href="/products/show/{{product.id}}">Show</a>|<a href="/products/edit/{{product.id}}">Edit</a>|
+    		<form class='remove' action="/products/destroy/{{product.id}}" method="POST">
+    		<input type="submit" value="Remove"></form></td>
+    	</tr>
+    	{% endfor %}
+    </table>
+    <a href="/products/new">Add a new product</a>
   </body>
 </html>

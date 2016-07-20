@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Product</title>
+	<link class="cssdeck" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" class="cssdeck">
+	<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+</head>
+<body>
+	<h3>Add a new product</h3>
+		{% with messages = get_flashed_messages(with_categories=true) %}
+	      {% if messages %}
+	        {% for category,message in messages %}
+	          <p class="{{ category }}">{{message}}</p>
+	        {% endfor %}
+	      {% endif %}
+	    {% endwith %}
+	<form action='/products/create' method="POST">
+		<p>Name</p>
+		<input type="text" name="name">
+		<p>Description</p>
+		<input type="text" name="description">
+		<p>Price (in $)</p>
+		<input type="text" name="price">
+		<p><input type="submit" name="create" value="Create"></p>
+	</form>
+	<a href="/products">Go Back</a>
+</body>
+</html>

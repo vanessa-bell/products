@@ -1,3 +1,49 @@
 * {
-  font-family: monaco;
+  font-family: Verdana;
+  margin: 10px;
+}
+
+table {
+	width: 100%;
+	border: 1px solid #ccc;
+}
+
+th {
+	text-align: left;
+}
+
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.show {
+	width: 50%;
+}
+
+.show tr:nth-child(even) {
+    background-color: #fff;
+}
+.show tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.remove {
+	display: inline-block;
+}
+
+.error {
+	background-color: red;
+	color: white;
+	width: 300px;
+	padding: 10px;
+}
+
+.success {
+	background-color: green;
+	color: white;
+	width: 320px;
+	padding: 10px;
 }

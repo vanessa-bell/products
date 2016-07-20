@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Product {{id}}</title>
+	<link class="cssdeck" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" class="cssdeck">
+	<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+</head>
+<body>
+	<h3>Edit Product {{id}}</h3>
+	<form action='/products/update/{{id}}' method="POST">
+		<p>Name</p><input type="text" name="name" value="{{name}}">
+		<p>Description</p><input type="text" name="description" value="{{description}}">
+		<p>Price (in $)</p><input type="text" name="price" value="{{price}}">
+		<p><input type="submit" name="update" value="Update"></p>
+	</form>
+	<a href="/products/show/{{id}}">Show</a>
+	<a href="/products">Back</a>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <link class="cssdeck" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" class="cssdeck">
+    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+    <title>Product {{id}} Info</title>
+  </head>
+  <body>
+    <h3>Product {{id}}</h3>
+    <table class='show'>
+    	<tr>
+    		<td>Name:</td>
+    		<td>{{name}}</td>
+    	</tr>
+    	<tr>
+    		<td>Description:</td>
+    		<td>{{description}}</td>
+    	</tr>
+        <tr>
+            <td>Price:</td>
+    		<td>${{price}}</td>
+    	</tr>
+    </table>
+    <a href="/products/edit/{{id}}">Edit</a>
+    <a href="/products">Back</a>
+  </body>
+</html>
